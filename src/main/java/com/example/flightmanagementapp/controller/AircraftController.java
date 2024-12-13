@@ -14,13 +14,14 @@ import java.util.List;
 @RestController
 public class AircraftController {
     @Autowired
-    AircraftService aircraftService;
+    private AircraftService aircraftService;
     
     //Find - 전체 조회
     @GetMapping("/aircraft")
     public List<Aircraft> getAllAircraftData(){
       return aircraftService.getAll();
     }
+
     //Create - 생성
     @PostMapping("/aircraft")
     public ResponseEntity<Aircraft> postAircraftData(@RequestBody final AircraftDto aircraftDto){
@@ -32,4 +33,9 @@ public class AircraftController {
         return aircraftService.deleteAircraftData(aircraftName);
     }
 
+    @PatchMapping("/aircraft/{aircraftName}")
+    public ResponseEntity<Aircraft> patchAircraftData(@PathVariable String aircraftName,
+                                                      @RequestBody final AircraftDto aircraftDto){
+        return aircraftService.modifyAircraftData(aircraftName, aircraftDto);
+    }
 }

@@ -5,12 +5,14 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.Comment;
 
 import java.time.ZonedDateTime;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "aircraft")
 public class Aircraft {
@@ -36,12 +38,12 @@ public class Aircraft {
 
 
     @Builder
-    public Aircraft(String aircraftName, String registerNum, String SerialNum,
-                    int mtow, String aircraftType, String aircraftDescription){
+    public Aircraft(String aircraftName, String aircraftRegisterNum, String aircraftSerialNum,
+                    int aircraftMTOW, String aircraftType, String aircraftDescription){
         this.aircraftName = aircraftName;
-        this.aircraftRegisterNum = registerNum;
-        this.aircraftSerialNum = SerialNum;
-        this.aircraftMTOW = mtow;
+        this.aircraftRegisterNum = aircraftRegisterNum;
+        this.aircraftSerialNum = aircraftSerialNum;
+        this.aircraftMTOW = aircraftMTOW;
         this.aircraftType = aircraftType;
         this.aircraftDescription = aircraftDescription;
     }

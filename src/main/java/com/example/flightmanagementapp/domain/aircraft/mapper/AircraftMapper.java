@@ -4,6 +4,7 @@ import com.example.flightmanagementapp.domain.aircraft.Dto.AircraftDto;
 import com.example.flightmanagementapp.domain.aircraft.Entity.Aircraft;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 
@@ -20,5 +21,9 @@ public interface AircraftMapper {
     @IterableMapping(qualifiedByName = "toDto")
     List<AircraftDto> toDtoList(List<Aircraft> aircrafts);
 
+    @Named("toEntity")
+    @Mapping(source = "aircraftDto.aircraftRegisterNum" , target = "aircraftRegisterNum")
+    @Mapping(source = "aircraftDto.aircraftSerialNum" , target = "aircraftSerialNum")
+    @Mapping(source = "aircraftDto.aircraftMTOW" , target = "aircraftMTOW")
     Aircraft toEntity(AircraftDto aircraftDto);
 }
