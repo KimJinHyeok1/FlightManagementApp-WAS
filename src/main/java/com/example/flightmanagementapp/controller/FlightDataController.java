@@ -16,9 +16,13 @@ public class FlightDataController {
 
     private final FlightDataService flightDataService;
 
-    @GetMapping("/flightData")
+    @GetMapping("/flightData/all")
     public ResponseEntity<List<FlightDataDto>> getAllFlightData(){
         return flightDataService.getAllData();
     }
 
+    @GetMapping("/flightData")
+    public ResponseEntity<FlightDataDto> getFlightData(@RequestParam String flightNumber){
+        return flightDataService.getFlightData(flightNumber);
+    }
 }

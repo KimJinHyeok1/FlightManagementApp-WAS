@@ -20,4 +20,10 @@ public class FlightDataService {
         List<FlightData> flightDataList = flightDataRepository.findAll();
         return ResponseEntity.ok(FlightDataMapper.MAPPER.toDtoList(flightDataList));
     }
+
+    public ResponseEntity<FlightDataDto> getFlightData(String flightNumber){
+        FlightData flightData = flightDataRepository.findById(flightNumber).orElseThrow(() ->
+                new NullPointerException("해당 FlightNumber가 없습니다."));
+        return ResponseEntity.ok(FlightDataMapper.MAPPER.toDto(flightData));
+    }
 }
