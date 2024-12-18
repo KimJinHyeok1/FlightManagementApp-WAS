@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Comment;
 
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,6 +32,12 @@ public class Aircraft {
     private String aircraftType;
     @Comment("기체 특이사항, 설명")
     private String aircraftDescription;
+    @Comment("기체 총 비행시간(분)")
+    private int totalFlightTime;
+
+    @OneToOne(mappedBy = "aircraft")
+    private FlightData flightData;
+    
     @Comment("생성 일시")
     private ZonedDateTime createdAt;
     @Comment("갱신 일시")
@@ -39,13 +46,14 @@ public class Aircraft {
 
     @Builder
     public Aircraft(String aircraftName, String aircraftRegisterNum, String aircraftSerialNum,
-                    int aircraftMTOW, String aircraftType, String aircraftDescription){
+                    int aircraftMTOW, String aircraftType, String aircraftDescription, int totalFlightTime){
         this.aircraftName = aircraftName;
         this.aircraftRegisterNum = aircraftRegisterNum;
         this.aircraftSerialNum = aircraftSerialNum;
         this.aircraftMTOW = aircraftMTOW;
         this.aircraftType = aircraftType;
         this.aircraftDescription = aircraftDescription;
+        this.totalFlightTime = totalFlightTime;
     }
 
     @PrePersist

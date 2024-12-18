@@ -15,7 +15,6 @@ public interface BatteryMapper {
 
     BatteryMapper MAPPER = Mappers.getMapper(BatteryMapper.class);
 
-
     @Named("toDto")
     BatteryDto toDto(Battery battery);
 

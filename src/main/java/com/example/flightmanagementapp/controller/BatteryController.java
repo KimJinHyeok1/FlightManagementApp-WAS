@@ -3,32 +3,33 @@ package com.example.flightmanagementapp.controller;
 import com.example.flightmanagementapp.domain.aircraft.Dto.BatteryDto;
 import com.example.flightmanagementapp.domain.aircraft.Entity.Battery;
 import com.example.flightmanagementapp.services.BatteryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 public class BatteryController {
-    @Autowired
-    private BatteryService batteryService;
+
+    private final BatteryService batteryService;
 
     //Find - 전체 조회
     @GetMapping("/battery")
-    public List<Battery> getAllAircraftData(){
+    public ResponseEntity<List<BatteryDto>> getAllAircraftData(){
         return batteryService.getAll();
     }
 
     //Create - 생성
     @PostMapping("/battery")
-    public ResponseEntity<Battery> postAircraftData(@RequestBody final BatteryDto batteryDto){
+    public ResponseEntity<BatteryDto> postAircraftData(@RequestBody final BatteryDto batteryDto){
         return batteryService.createBatteryData(batteryDto);
     }
 
     @PatchMapping("/battery/{batterySerialNum}")
-    public ResponseEntity<Battery> modifyAircraftData(@PathVariable String batterySerialNum,
+    public ResponseEntity<BatteryDto> modifyAircraftData(@PathVariable String batterySerialNum,
                                                       @RequestBody final  BatteryDto batteryDto){
         return batteryService.modifyBatteryData(batterySerialNum, batteryDto);
     }

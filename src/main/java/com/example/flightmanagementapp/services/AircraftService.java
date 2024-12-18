@@ -19,12 +19,15 @@ import java.util.List;
 public class AircraftService {
     private final AircraftRepository aircraftRepository;
 
-    public List<Aircraft> getAll() {
-        return aircraftRepository.findAll();
+    public ResponseEntity<List<AircraftDto>> getAll() {
+        return ResponseEntity.ok(AircraftMapper.
+                MAPPER.
+                toDtoList(aircraftRepository.findAll()));
     }
 
-    public ResponseEntity<Aircraft> createAircraftData(AircraftDto aircraftDto) {
-        return ResponseEntity.ok(aircraftRepository.save(AircraftMapper.MAPPER.toEntity(aircraftDto)));
+    public ResponseEntity<AircraftDto> createAircraftData(AircraftDto aircraftDto) {
+        aircraftRepository.save(AircraftMapper.MAPPER.toEntity(aircraftDto));
+        return ResponseEntity.ok(aircraftDto);
     }
 
     public HttpStatus deleteAircraftData(String aircraftName){
@@ -33,7 +36,7 @@ public class AircraftService {
     }
 
     @Transactional
-    public ResponseEntity<Aircraft> modifyAircraftData(String aircraftName, AircraftDto aircraftDto){
+    public ResponseEntity<AircraftDto> modifyAircraftData(String aircraftName, AircraftDto aircraftDto){
 
         Aircraft aircraft = aircraftRepository.findById(aircraftName)
                 .orElseThrow(()-> new NullPointerException("해당 기체 아이디가 존재하지 않습니다"));
@@ -44,6 +47,6 @@ public class AircraftService {
         aircraft.setAircraftSerialNum(aircraftDto.getAircraftSerialNum());
         aircraft.setAircraftDescription(aircraftDto.getAircraftDescription());
 
-        return ResponseEntity.ok(aircraft);
+        return ResponseEntity.ok(AircraftMapper.MAPPER.toDto(aircraft));
     }
 }

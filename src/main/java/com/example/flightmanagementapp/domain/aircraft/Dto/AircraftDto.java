@@ -15,4 +15,5 @@ public class AircraftDto {
     private int aircraftMTOW;
     private String aircraftType;
     private String aircraftDescription;
+    private int totalFlightTime;
 }

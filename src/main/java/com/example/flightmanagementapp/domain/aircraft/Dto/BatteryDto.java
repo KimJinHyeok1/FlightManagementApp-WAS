@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BatteryDto {
 
-        private String batterySerialNum;
-        private String batteryType;
-        private int batteryCell;
-        private int batteryCapacity;
-    }
+    private String batterySerialNum;
+    private String batteryType;
+    private int batteryCell;
+    private int batteryCapacity;
+    private int totalUsingTime;
+}

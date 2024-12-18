@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.apache.ibatis.annotations.Many;
 import org.hibernate.annotations.Comment;
 
 import java.time.ZonedDateTime;
@@ -25,6 +26,13 @@ public class Battery {
     private int batteryCell;
     @Comment("배터리 용량(mAh)")
     private int batteryCapacity;
+    @Comment("총 사용시간(분)")
+    private int totalUsingTime;
+
+    @ManyToOne
+    @JoinColumn
+    private FlightData flightData;
+
     @Comment("생성 일시")
     private ZonedDateTime createdAt;
     @Comment("갱신 일시")   
@@ -33,12 +41,13 @@ public class Battery {
 
     @Builder
     public Battery(String batterySerialNum, String batteryType, int batteryCell,
-                   int batteryCapacity)
+                   int batteryCapacity, int totalUsingTime)
     {
       this.batterySerialNum = batterySerialNum;
       this.batteryType = batteryType;
       this.batteryCell = batteryCell;
       this.batteryCapacity = batteryCapacity;
+      this.totalUsingTime = totalUsingTime;
     }
 
     @PrePersist

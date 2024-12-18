@@ -20,12 +20,14 @@ public class BatteryService {
 
     private final BatteryRepository batteryRepository;
 
-    public List<Battery> getAll() {
-        return batteryRepository.findAll();
+    public ResponseEntity<List<BatteryDto>> getAll() {
+        List<Battery> batteries = batteryRepository.findAll();
+        return ResponseEntity.ok(BatteryMapper.MAPPER.toDtoList(batteries));
     }
 
-    public ResponseEntity<Battery> createBatteryData(BatteryDto batteryDto) {
-        return ResponseEntity.ok(batteryRepository.save(BatteryMapper.MAPPER.toEntity(batteryDto)));
+    public ResponseEntity<BatteryDto> createBatteryData(BatteryDto batteryDto) {
+        Battery battery = batteryRepository.save(BatteryMapper.MAPPER.toEntity(batteryDto));
+        return ResponseEntity.ok(BatteryMapper.MAPPER.toDto(battery));
     }
 
     public HttpStatus deleteAircraftData(String batterySerialNum){
@@ -34,7 +36,7 @@ public class BatteryService {
     }
 
     @Transactional
-    public ResponseEntity<Battery> modifyBatteryData(String batterySerialNum, BatteryDto batteryDto){
+    public ResponseEntity<BatteryDto> modifyBatteryData(String batterySerialNum, BatteryDto batteryDto){
 
         Battery battery = batteryRepository.findById(batterySerialNum)
                 .orElseThrow(()-> new NullPointerException("해당 배터리 아이디가 존재하지 않습니다"));
@@ -43,6 +45,6 @@ public class BatteryService {
         battery.setBatteryCapacity(batteryDto.getBatteryCapacity());
         battery.setBatteryCell(batteryDto.getBatteryCell());
 
-        return ResponseEntity.ok(battery);
+        return ResponseEntity.ok(BatteryMapper.MAPPER.toDto(battery));
     }
 }
