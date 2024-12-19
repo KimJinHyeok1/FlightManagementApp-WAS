@@ -58,8 +58,6 @@ VALUES
     (9, 'FL009', 11, 12, 13),
     (10, 'FL010', 14, 15, 1);
 
-
-
 -- 데이터 삽입 스크립트\
 INSERT INTO battery (battery_serial_num, battery_type, battery_cell, battery_capacity, total_using_time,
                      flight_data_flight_number, created_at, updated_at)
