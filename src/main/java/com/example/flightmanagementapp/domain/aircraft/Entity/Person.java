@@ -16,9 +16,17 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Table(name = "person")
-public class Person {
 
+@SequenceGenerator(
+        name = "OPERATOR_SEQ_GENERATOR",
+        sequenceName = "OPERATOR_SEQUENCE",
+        initialValue = 30,
+        allocationSize = 1
+)
+
+public class Person {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "OPERATOR_SEQ_GENERATOR")
     @Column(unique = true, nullable = false)
     @Comment("운용자 id")
     private int id;

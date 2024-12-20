@@ -28,21 +28,21 @@ VALUES
 
 INSERT INTO person (id, name, phone_number, team_name, position, certification, created_at, updated_at)
 VALUES
-    (1, '홍길동', '010-1234-5678', '운영팀', '팀장', 'A급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (2, '이순신', '010-2345-6789', '개발팀', '부장', 'B급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (3, '김유신', '010-3456-7890', '지원팀', '과장', 'C급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (4, '강감찬', '010-4567-8901', '운영팀', '대리', 'A급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (5, '유관순', '010-5678-9012', '품질팀', '사원', 'B급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (6, '안중근', '010-6789-0123', '운영팀', '팀장', 'A급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (7, '윤봉길', '010-7890-1234', '기획팀', '부장', 'C급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (8, '신사임당', '010-8901-2345', '지원팀', '과장', 'B급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (9, '세종대왕', '010-9012-3456', '운영팀', '대리', 'A급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (10, '정약용', '010-0123-4567', '품질팀', '사원', 'C급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (11, '장보고', '010-1230-4560', '운영팀', '사원', 'A급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (12, '왕건', '010-2130-4561', '기획팀', '과장', 'B급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (13, '최영', '010-3120-4562', '개발팀', '부장', 'C급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (14, '황희', '010-4120-4563', '품질팀', '대리', 'A급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    (15, '박문수', '010-5120-4564', '지원팀', '팀장', 'B급 조종사', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    (1, '홍길동', '010-1234-5678', '운영팀', '팀장', '초경량비행장치 무인멀티콥터 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (2, '이순신', '010-2345-6789', '개발팀', '부장', '초경량비행장치 무인멀티콥터 3종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3, '김유신', '010-3456-7890', '지원팀', '과장', '초경량비행장치 무인헬리콥터 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (4, '강감찬', '010-4567-8901', '운영팀', '대리', '초경량비행장치 무인헬리콥터 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (5, '유관순', '010-5678-9012', '품질팀', '사원', '초경량비행장치 무인비행기 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (6, '안중근', '010-6789-0123', '운영팀', '팀장', '초경량비행장치 무인비행기 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (7, '윤봉길', '010-7890-1234', '기획팀', '부장', '초경량비행장치 무인비행기 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (8, '신사임당', '010-8901-2345', '지원팀', '과장', '초경량비행장치 무인비행기 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (9, '세종대왕', '010-9012-3456', '운영팀', '대리', '초경량비행장치 무인비행기 1종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (10, '정약용', '010-0123-4567', '품질팀', '사원', '초경량비행장치 무인비행기 4종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (11, '장보고', '010-1230-4560', '운영팀', '사원', '초경량비행장치 무인비행기 4종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (12, '왕건', '010-2130-4561', '기획팀', '과장', '초경량비행장치 무인비행기 4종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (13, '최영', '010-3120-4562', '개발팀', '부장', '초경량비행장치 무인비행기 4종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (14, '황희', '010-4120-4563', '품질팀', '대리', '초경량비행장치 무인비행기 4종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (15, '박문수', '010-5120-4564', '지원팀', '팀장', '초경량비행장치 무인비행기 4종', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
 INSERT INTO flight_data_operator (id, flight_number, ep_id, ip_id, observer_id)

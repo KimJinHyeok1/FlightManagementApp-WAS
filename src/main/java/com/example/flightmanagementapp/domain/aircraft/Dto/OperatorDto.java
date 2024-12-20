@@ -15,10 +15,9 @@ public class OperatorDto {
     private int id;
     private String name;
     private String phoneNumber;
-    private String teamName;
     private String position;
+    private String teamName;
     private String certification;
-    private OperatorsRole role;
     private ZonedDateTime createdAt;
     private ZonedDateTime updatedAt;
 

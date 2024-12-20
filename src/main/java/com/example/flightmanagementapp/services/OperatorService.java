@@ -17,7 +17,10 @@ public class OperatorService {
 
     private final OperatorRepository operatorRepository;
 
-    public List<Person> getAllOperators() { return operatorRepository.findAll(); }
+    public ResponseEntity<List<OperatorDto>> getAllOperators() {
+        List<Person> operators = operatorRepository.findAll();
+        return ResponseEntity.ok(PersonMapper.MAPPER.toDtoList(operators));
+    }
 
     public ResponseEntity<Person> createOperatorData(OperatorDto operatorDto) {
         return ResponseEntity.ok(operatorRepository.save(

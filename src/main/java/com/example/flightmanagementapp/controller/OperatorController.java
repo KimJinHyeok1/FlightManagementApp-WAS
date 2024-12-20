@@ -17,7 +17,7 @@ public class OperatorController {
     private final OperatorService operatorService;
 
     @GetMapping("/operator")
-    public List<Person> getAllOperators(){
+    public ResponseEntity<List<OperatorDto>> getAllOperators(){
         return operatorService.getAllOperators();
     }
 
