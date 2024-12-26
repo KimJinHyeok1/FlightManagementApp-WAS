@@ -4,6 +4,7 @@ import com.example.flightmanagementapp.domain.aircraft.Dto.FlightDataDto;
 import com.example.flightmanagementapp.domain.aircraft.Entity.FlightData;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 
@@ -14,6 +15,7 @@ public interface FlightDataMapper {
     FlightDataMapper MAPPER = Mappers.getMapper(FlightDataMapper.class);
 
     @Named("toDto")
+    @Mapping(source = "flightData.batteries", target = "flightBatteries")
     FlightDataDto toDto(FlightData flightData);
 
     @IterableMapping(qualifiedByName = "toDto")

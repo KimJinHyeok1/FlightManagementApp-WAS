@@ -5,10 +5,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.apache.ibatis.annotations.Many;
 import org.hibernate.annotations.Comment;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,8 +28,9 @@ public class FlightData {
     @OneToOne
     @JoinColumn
     Aircraft aircraft;
+
     @OneToMany(mappedBy = "flightData")
-    List<Battery> batteries;
+    List<FlightBattery> batteries = new ArrayList<>();
     @OneToOne(mappedBy = "flightData_id")
     FlightDataOperator flightDataOperator;
 
@@ -40,9 +43,9 @@ public class FlightData {
     @Comment("온도")
     private int temperature;
     @Comment("비행 일시")
-    private ZonedDateTime flightDate;
+    private LocalDate flightDate;
     @Comment("비행 시간")
-    private int flightTime;
+    private LocalTime flightTime;
     
     @Comment("임무장치")
     private String payloadItem;

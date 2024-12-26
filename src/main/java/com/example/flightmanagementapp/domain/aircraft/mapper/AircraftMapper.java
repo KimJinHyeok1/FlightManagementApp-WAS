@@ -22,8 +22,8 @@ public interface AircraftMapper {
     List<AircraftDto> toDtoList(List<Aircraft> aircrafts);
 
     @Named("toEntity")
-    @Mapping(source = "aircraftDto.aircraftRegisterNum" , target = "aircraftRegisterNum")
-    @Mapping(source = "aircraftDto.aircraftSerialNum" , target = "aircraftSerialNum")
-    @Mapping(source = "aircraftDto.aircraftMTOW" , target = "aircraftMTOW")
+    @Mapping(source = "aircraftDto.aircraftRegisterNum", target = "aircraftRegisterNum")
+    @Mapping(source = "aircraftDto.aircraftSerialNum", target = "aircraftSerialNum")
+    @Mapping(source = "aircraftDto.aircraftMTOW", target = "aircraftMTOW")
     Aircraft toEntity(AircraftDto aircraftDto);
 }

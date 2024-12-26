@@ -1,7 +1,6 @@
 package com.example.flightmanagementapp.controller;
 
 import com.example.flightmanagementapp.domain.aircraft.Dto.BatteryDto;
-import com.example.flightmanagementapp.domain.aircraft.Entity.Battery;
 import com.example.flightmanagementapp.services.BatteryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
