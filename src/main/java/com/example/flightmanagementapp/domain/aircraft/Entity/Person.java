@@ -66,6 +66,4 @@ public class Person {
     private void preUpdate(){
         this.updatedAt = ZonedDateTime.now();
     }
-
-
 }

@@ -30,6 +30,9 @@ public class Battery {
     @Comment("총 사용시간(분)")
     private int totalUsingTime;
 
+    //@OneToMany(mappedBy = "battery")
+    //private List<FlightBattery> flightData;
+
     @Comment("생성 일시")
     private ZonedDateTime createdAt;
     @Comment("갱신 일시")   

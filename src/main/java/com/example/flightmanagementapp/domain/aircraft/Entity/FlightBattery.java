@@ -11,10 +11,17 @@ import org.hibernate.annotations.Comment;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@SequenceGenerator(
+        name = "FB_SEQ_GENERATOR",
+        sequenceName = "FB_SEQUENCE",
+        initialValue = 30,
+        allocationSize = 1
+)
 public class FlightBattery {
     @Id
     @Column(unique = true, nullable = false)
     @Comment("Flight Data and Battery 연결 테이블 ID")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FB_SEQ_GENERATOR")
     private int id;
 
     @ManyToOne

@@ -21,7 +21,4 @@ public interface FlightDataMapper {
     @IterableMapping(qualifiedByName = "toDto")
     List<FlightDataDto> toDtoList(List<FlightData> flightData);
 
-    @Named("toEntity")
-    FlightData toEntity(FlightDataDto flightDataDto);
-
 }

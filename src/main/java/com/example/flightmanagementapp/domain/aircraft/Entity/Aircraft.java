@@ -35,8 +35,8 @@ public class Aircraft {
     @Comment("기체 총 비행시간(분)")
     private int totalFlightTime;
 
-    @OneToOne(mappedBy = "aircraft")
-    private FlightData flightData;
+    @OneToMany(mappedBy = "aircraft")
+    private List<FlightData> flightData;
     
     @Comment("생성 일시")
     private ZonedDateTime createdAt;
@@ -66,6 +66,4 @@ public class Aircraft {
     private void preUpdate(){
         this.updatedAt = ZonedDateTime.now();
     }
-
-
 }

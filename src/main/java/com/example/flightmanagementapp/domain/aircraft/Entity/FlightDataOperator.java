@@ -11,23 +11,30 @@ import org.hibernate.annotations.Comment;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@SequenceGenerator(
+        name = "FO_SEQ_GENERATOR",
+        sequenceName = "FO_SEQUENCE",
+        initialValue = 30,
+        allocationSize = 1
+)
 public class FlightDataOperator {
     @Id
     @Column(unique = true, nullable = false)
     @Comment("연결 테이블 ID")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FO_SEQ_GENERATOR")
     private int id;
 
     @OneToOne
     @JsonIgnore
     @JoinColumn(name = "flightNumber")
     private FlightData flightData_id;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ep_id")
     private Person externalPilot;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ip_id")
     private Person internalPilot;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "observer_id")
     private Person observer;
 
