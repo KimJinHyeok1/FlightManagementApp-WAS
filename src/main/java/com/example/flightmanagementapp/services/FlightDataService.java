@@ -55,6 +55,14 @@ public class FlightDataService {
         for(int i = 0; i < flightDataDto.getFlightBatteries().size(); ++i){
             Battery battery = batteryRepository.findById(flightDataDto.getFlightBatteries()
                     .get(i)).orElseThrow(NullPointerException::new);
+
+            int batteryUsingTime = battery.getTotalUsingTime();
+            if(flightDataDto.getFlightTime().getHour() > 0){
+                battery.setTotalUsingTime(batteryUsingTime + (60 * flightDataDto.getFlightTime().getHour()
+                        + flightDataDto.getFlightTime().getMinute()));
+            }
+            else battery.setTotalUsingTime(batteryUsingTime + flightDataDto.getFlightTime().getMinute());
+
             FlightBattery flightBattery = new FlightBattery();
             flightBattery.setBattery(battery);
             flightBattery.setFlightData(flightData);
