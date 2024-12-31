@@ -28,6 +28,7 @@ public class FlightDataDto {
     private int windSpeed;
     private int windDirection;
     private int temperature;
+    private int humidity;
     private LocalDate flightDate;
     private LocalTime flightTime;
 
