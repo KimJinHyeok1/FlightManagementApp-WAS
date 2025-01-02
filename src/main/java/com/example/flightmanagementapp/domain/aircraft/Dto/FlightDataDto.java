@@ -21,7 +21,6 @@ public class FlightDataDto {
     private String flightNumber;
 
     private AircraftDto aircraft;
-    //private List<BatteryDto> batteries;
     private List<FlightBatteryDto> flightBatteries;
     private FlightDataOperator flightDataOperator;
 
