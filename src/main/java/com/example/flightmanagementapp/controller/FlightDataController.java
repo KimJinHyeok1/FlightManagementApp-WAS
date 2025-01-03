@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -28,6 +30,13 @@ public class FlightDataController {
     @GetMapping("/flightData/opName")
     public ResponseEntity<List<FlightDataDto>> getFlightDataByOperatorName(@RequestParam String operatorName){
         return flightDataService.getFlightDataByOperatorName(operatorName);
+    }
+
+    @GetMapping("/flightData/date")
+    public ResponseEntity<List<FlightDataDto>> getFlightDataByDate(@RequestParam String startDate, String endDate){
+        LocalDate localFlightStartDate = LocalDate.parse(startDate, DateTimeFormatter.ISO_DATE);
+        LocalDate localFlightEndDate = LocalDate.parse(endDate, DateTimeFormatter.ISO_DATE);
+        return flightDataService.getFlightDataByDate(localFlightStartDate, localFlightEndDate);
     }
 
     @PostMapping("/flightData")

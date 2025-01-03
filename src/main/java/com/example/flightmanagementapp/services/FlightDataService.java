@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -36,6 +37,11 @@ public class FlightDataService {
     public ResponseEntity<List<FlightDataDto>> getFlightDataByOperatorName(String operatorName){
         List<FlightData> flightDataList = flightDataRepository.
                 findByFlightDataOperator_ExternalPilot_NameEqualsOrFlightDataOperator_InternalPilot_NameEquals(operatorName, operatorName);
+        return ResponseEntity.ok(FlightDataMapper.MAPPER.toDtoList(flightDataList));
+    }
+
+    public ResponseEntity<List<FlightDataDto>> getFlightDataByDate(LocalDate startDate, LocalDate endDate){
+        List<FlightData> flightDataList = flightDataRepository.findByFlightDateBetween(startDate, endDate);
         return ResponseEntity.ok(FlightDataMapper.MAPPER.toDtoList(flightDataList));
     }
 
