@@ -12,19 +12,19 @@ VALUES
     ('Embraer_E195', 'REG-9012', 'SERIAL-3456', 52000, 'Regional Jet', 'Fuel-efficient regional jet', 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     ('C-130_Hercules', 'REG-0123', 'SERIAL-4567', 155000, 'Transport', 'Military transport aircraft', 0,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO flight_data (flight_number, aircraft_aircraft_name, wind_speed, wind_direction, humidity, temperature,
+INSERT INTO flight_data (flight_number, aircraft_aircraft_name, wind_speed, wind_direction, humidity, temperature, flight_spot,
                          flight_date, flight_time, payload_item, payload_weight, created_at, updated_at)
 VALUES
-    ('FL001', 'A320_NEO', 10, 180, 55, 22, CURRENT_TIMESTAMP, '00:20:00', 'Camera', 150, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL002', 'B737_MAX', 12, 200, 50, 23, CURRENT_TIMESTAMP, '00:20:00', 'Radar', 200, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL003', 'Cessna_172', 14, 220, 45, 20, CURRENT_TIMESTAMP, '00:20:00', 'Sensor', 100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL004', 'Gulfstream_G650', 16, 190, 60, 24, CURRENT_TIMESTAMP, '00:20:00', 'Camera', 120, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL005', 'Bombardier_CRJ700', 18, 210, 48, 25, CURRENT_TIMESTAMP, '00:20:00', 'Antenna', 300, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL006', 'F-22_Raptor', 15, 230, 52, 26, CURRENT_TIMESTAMP, '00:20:00', 'Payload X', 250, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL007', 'Boeing_747_8', 20, 240, 40, 28, CURRENT_TIMESTAMP, '00:20:00', 'Radar', 350, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL008', 'Airbus_A380', 22, 200, 55, 30, CURRENT_TIMESTAMP, '00:20:00', 'Camera', 180, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL009', 'Embraer_E195', 10, 250, 42, 21, CURRENT_TIMESTAMP, '00:20:00', 'Sensor', 140, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('FL010', 'C-130_Hercules', 14, 260, 47, 22, CURRENT_TIMESTAMP, '00:20:00', 'Payload Z', 120, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ('FL001', 'A320_NEO', 10, 180, 55, 22, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Camera', 150, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL002', 'B737_MAX', 12, 200, 50, 23, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Radar', 200, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL003', 'Cessna_172', 14, 220, 45, 20, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Sensor', 100, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL004', 'Gulfstream_G650', 16, 190, 60, 24, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Camera', 120, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL005', 'Bombardier_CRJ700', 18, 210, 48, 25, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Antenna', 300, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL006', 'F-22_Raptor', 15, 230, 52, 26, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Payload X', 250, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL007', 'Boeing_747_8', 20, 240, 40, 28, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Radar', 350, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL008', 'Airbus_A380', 22, 200, 55, 30, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Camera', 180, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL009', 'Embraer_E195', 10, 250, 42, 21, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Sensor', 140, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('FL010', 'C-130_Hercules', 14, 260, 47, 22, '인천 비행장', CURRENT_TIMESTAMP, '00:20:00', 'Payload Z', 120, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 INSERT INTO person (id, name, phone_number, team_name, position, certification, created_at, updated_at)
 VALUES

@@ -30,6 +30,7 @@ public class FlightDataDto {
     private int humidity;
     private LocalDate flightDate;
     private LocalTime flightTime;
+    private String flightSpot;
 
     private String payloadItem;
     private int payloadWeight;

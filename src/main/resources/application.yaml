@@ -17,6 +17,7 @@ spring:
     defer-datasource-initialization: true
 
   datasource:
+    #url: "jdbc:mariadb://172.17.0.4:3306/FlightManagementApp"
     url: "jdbc:mariadb://localhost:3306/FlightManagementApp"
     username: "root"
     password: "1234"

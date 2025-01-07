@@ -43,6 +43,8 @@ public class FlightData {
     private int humidity;
     @Comment("온도")
     private int temperature;
+    @Comment("비행 장소")
+    private String flightSpot;
     @Comment("비행 일시")
     private LocalDate flightDate;
     @Comment("비행 시간")
@@ -70,6 +72,7 @@ public class FlightData {
     public FlightData(String flightNumber, Aircraft aircraft,
                       int windSpeed, int windDirection,
                       int humidity, int temperature,
+                      String flightSpot,
                       LocalDate flightDate, LocalTime flightTime,
                       String payloadItem, int payloadWeight)
     {
@@ -79,6 +82,7 @@ public class FlightData {
       this.windDirection = windDirection;
       this.humidity = humidity;
       this.flightDate = flightDate;
+      this.flightSpot = flightSpot;
       this.flightTime = flightTime;
       this.payloadItem = payloadItem;
       this.payloadWeight = payloadWeight;
