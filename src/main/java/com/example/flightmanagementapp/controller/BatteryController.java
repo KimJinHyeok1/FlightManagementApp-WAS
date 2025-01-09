@@ -17,25 +17,25 @@ public class BatteryController {
 
     //Find - 전체 조회
     @GetMapping("/battery")
-    public ResponseEntity<List<BatteryDto>> getAllAircraftData(){
+    public ResponseEntity<List<BatteryDto>> getAllABatteryData(){
         return batteryService.getAll();
     }
 
     //Create - 생성
     @PostMapping("/battery")
-    public ResponseEntity<BatteryDto> postAircraftData(@RequestBody final BatteryDto batteryDto){
+    public ResponseEntity<BatteryDto> postBatteryData(@RequestBody final BatteryDto batteryDto){
         return batteryService.createBatteryData(batteryDto);
     }
 
     @PatchMapping("/battery/{batterySerialNum}")
-    public ResponseEntity<BatteryDto> modifyAircraftData(@PathVariable String batterySerialNum,
+    public ResponseEntity<BatteryDto> modifyBatteryData(@PathVariable String batterySerialNum,
                                                       @RequestBody final  BatteryDto batteryDto){
         return batteryService.modifyBatteryData(batterySerialNum, batteryDto);
     }
 
     //delete - 삭제
     @DeleteMapping("/battery")
-    public HttpStatus deleteAircraftData(@RequestParam String batterySerialNum){
-        return batteryService.deleteAircraftData(batterySerialNum);
+    public HttpStatus deleteBatterytData(@RequestParam String batterySerialNum){
+        return batteryService.deleteBatteryData(batterySerialNum);
     }
 }

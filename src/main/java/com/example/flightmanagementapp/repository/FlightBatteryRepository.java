@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FlightBatteryRepository  extends JpaRepository<FlightBattery, Integer>  {
+    void deleteByBattery_BatterySerialNumEquals(String batterySerialNum);
 }

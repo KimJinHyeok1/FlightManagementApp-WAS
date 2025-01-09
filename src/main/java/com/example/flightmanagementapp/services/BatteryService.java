@@ -6,6 +6,7 @@ import com.example.flightmanagementapp.domain.aircraft.Entity.Aircraft;
 import com.example.flightmanagementapp.domain.aircraft.Entity.Battery;
 import com.example.flightmanagementapp.domain.aircraft.mapper.BatteryMapper;
 import com.example.flightmanagementapp.repository.BatteryRepository;
+import com.example.flightmanagementapp.repository.FlightBatteryRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import java.util.List;
 public class BatteryService {
 
     private final BatteryRepository batteryRepository;
+    private final FlightBatteryRepository flightBatteryRepository;
 
     public ResponseEntity<List<BatteryDto>> getAll() {
         List<Battery> batteries = batteryRepository.findAll();
@@ -30,8 +32,8 @@ public class BatteryService {
         return ResponseEntity.ok(BatteryMapper.MAPPER.toDto(battery));
     }
 
-    public HttpStatus deleteAircraftData(String batterySerialNum){
-        batteryRepository.deleteById(batterySerialNum);
+    public HttpStatus deleteBatteryData(String batterySerialNum){
+            batteryRepository.deleteById(batterySerialNum);
         return HttpStatus.OK;
     }
 
